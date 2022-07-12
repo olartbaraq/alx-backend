@@ -6,14 +6,14 @@ from base_caching import BaseCaching
 
 class BasicCache(BaseCaching):
     """a new class inherited from base class"""
+
     def __init__(self):
         super().__init__()
 
     def put(self, key, item):
         """add an item in key-value pair to the cache"""
-        if key or item is None:
-            pass
-        self.cache_data[key] = item
+        if key and item:
+            self.cache_data[key] = item
 
     def get(self, key):
         """get an item by key from the cache"""
