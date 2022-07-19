@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """ Starts a Flash Web Application """
-from logging import config
+
 from flask import Flask, render_template, request
 from flask_babel import Babel
 
@@ -16,6 +16,7 @@ class Config(object):
     BABEL_DEFAULT_LOCALE = 'en'
     BABEL_DEFAULT_TIMEZONE = 'UTC'
 
+app.config.from_object(Config)
 
 @app.route('/')
 def home_page() -> str:
